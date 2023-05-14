@@ -1,0 +1,16 @@
+{% extends 'img_ascii/index.html' %}
+{% block content%}
+<div class="d-flex justify-content-center col-sm-12">
+<h1>success</h1>
+</div>
+
+<div class="d-flex justify-content-center col-sm-12">
+<textarea cols="165" rows="10" >{{ascii}}</textarea>
+</div>
+<div class="d-flex justify-content-center col-sm-12">
+    <p>To better view the art copy and paste it in your preferred text editor ,better methods will be implemented soon!</p>
+</div>
+<div class="d-flex justify-content-center col-sm-12">
+<a href="{% url 'home' %}">HOME</a>
+</div>
+{% endblock %}
