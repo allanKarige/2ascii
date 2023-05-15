@@ -13,7 +13,6 @@
          color: limegreen;
          background-color: black;
          font-family:'Times New Roman', Times, serif;
-     
         }
     </style>
 
@@ -34,10 +33,30 @@
 <p>Upload any image from your pc and instantly generate ascii art from it.<br>Press the button below to upload your image</p></div>
 
     <br><br>
-    <div class="d-flex justify-content-center col-sm-12">
-        <a class='btn btn-outline-primary' href="{% url 'upload'%}" >Upload an Image</a>
+        <hr>
+        <div class="d-flex justify-content-center">
+    <div class="card m-5" style="width: 18rem;background-color: black;color: limegreen;border:solid 5px limegreen;border-style: outset;">
+
+            <div class="card-header">
+                Please choose an image you would like to convert to ascii art
+                <hr>
+            </div>
+            <div class="card-body m-5">
+              <div class="d-flex justify-content-center ">
+                <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+                     {% csrf_token %}
+                    {{ form.as_table}}
+                    <hr>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-secondary">Convert</button>
+                    </div>
+                </form>
+
+            </div>
+            </div>
     </div>
-    
+</div>
+
     {% endblock %}
 
 

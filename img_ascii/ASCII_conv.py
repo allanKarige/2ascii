@@ -13,7 +13,7 @@ def resize(img_path):
 
 
 def to_ascii(img_path):
-    chars = '@$#*!=;:~-,.'
+    chars = '@$#*!;:~-,.  '
     img = resize(img_path)
     img_pixels = img.getdata()
     scalar = len(chars) / 255

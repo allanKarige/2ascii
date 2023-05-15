@@ -5,10 +5,6 @@ from .forms import ImgUploadForm
 from .ASCII_conv import to_ascii
 
 
-def index_page(request):
-    return render(request, 'img_ascii/index.html')
-
-
 def upload_page(request):
     if request.method == 'POST':
         form = ImgUploadForm(request.POST, request.FILES)
@@ -21,8 +17,7 @@ def upload_page(request):
             image2.delete()
             return render(request, 'img_ascii/success.html', {'ascii':output})
 
-    else:    
-        form = ImgUploadForm()
-    return render(request, 'img_ascii/upload.html', {'form': form})
+    form = ImgUploadForm()
+    return render(request, 'img_ascii/index.html', {'form': form})
 
 
